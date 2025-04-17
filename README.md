@@ -1,9 +1,5 @@
-# Test 3B
+# Test Konfío
 ## Data Engineering
-
-## Página Scrappeada
-
-https://www.worldometers.info/world-population/population-by-country/
 
 ## Librerías
 
@@ -25,7 +21,7 @@ Para poder ejecutar el programa , se deben seguir los siguientes pasos
 1.- Generar el archivo .env , para la ruta que se utilizará posteriormente para el docker
 
 ```sh
-PATH_LOCAL_USER="PERSONAL_PATH"/Test_3B_DataEngineering/notebooks
+PATH_LOCAL_USER="PERSONAL_PATH"/Test_Konfio_DataEngineering/
 ```
 
 2.- Ejecutar
