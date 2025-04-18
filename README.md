@@ -5,13 +5,10 @@
 
 Las librerías y frameworks usados se enlistan a continuación : 
 
-| Librería                                   | Detalle                                        |
-| ------------------------------------------ | ---------------------------------------------- |
-| tools_datapipeline_3b-0.1-py3-none-any.whl | Archivo wheel , de herramientas propias de ETL |
-| requests                                   | Libería para realizar peticiones               |
-| beautifulsoup4                             | Librería para realizar el Web Scraping         |
-| lxml                                       | Complemento de beautifulsoup4                  |
-| delta-spark==2.4.0                         | Librería para construccion del Data Lake       |
+| Librería                                 | Detalle                                |
+| ---------------------------------------- | -------------------------------------- |
+| datapipeline_konfio-0.1-py3-none-any.whl | Archivo wheel de extractor de datos    |
+| requests                                 | Libería para realizar solicitudes HTTP |
 
 
 ## Instalación / Ejecución
@@ -35,30 +32,20 @@ source Launcher.sh
 http://127.0.0.1:8888/lab?token="generado_por_el_contenedor"
 ```
 
-4.- Se puede correr el notebook :
+4.- Correr el notebook :
 
 ```sh
 develop_datapipeline.ipynb (abriendo el notebook y corriendolo)
 ```
 
-o el .py , ejecutando en linea de comandos
+## Link Diagrama De Plan De Scalabilidad
 
-```sh
-python prod_datapipeline.py
-```
-
-## Link Doc - Preguntas Estrategia
-
-https://docs.google.com/document/d/1ukQJ_v3UbQCwjPOCWXNI3PXGifgPp73b6tu3bf6C7_M/edit
-
-## Link Doc - Diagrama De Arquitectura
-
-https://app.diagrams.net/#G13Avo3FfVeTAIuVsC2cP2-DbaP8WdzR9w
 
 ## Deudas tecnicas
 
-- 1.-#TODO: Completar tipos de ingesta (incremental,por intervalo , re-proceso)
-- 2.-#TODO: Orquestación de datos
+- 1.-#TODO: La API , bajo el registro demo; no permitio el intervalo definido en el test, pero se probo con : (2025, 3, 1) al (2025,3,30) a manera de continuar con el test.
+- 2.-#TODO: Data Analysis
+- 3.-#TODO: Testing
 
 ## License
 
