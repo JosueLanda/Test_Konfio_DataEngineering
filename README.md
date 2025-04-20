@@ -40,12 +40,13 @@ develop_datapipeline.ipynb (abriendo el notebook y corriendolo)
 
 ## Link Diagrama De Plan De Scalabilidad
 
+https://excalidraw.com/#json=hO3S0jApp5zQ4W1atV6h8,4TUvqz2pI0T7dgpEtQPvYw
 
 ## Deudas tecnicas
 
-- 1.-#TODO: La API , bajo el registro demo; no permitio el intervalo definido en el test, pero se probo con : (2025, 3, 1) al (2025,3,30) a manera de continuar con el test.
-- 2.-#TODO: Data Analysis
-- 3.-#TODO: Testing
+- 1.-La API , bajo el registro demo; no permitio el intervalo definido en el test, pero se probo con : (2025, 3, 1) al (2025,3,30) a manera de continuar con el test.
+- 2.-Data Analysis
+- 3.-Testing
 
 ## License
 

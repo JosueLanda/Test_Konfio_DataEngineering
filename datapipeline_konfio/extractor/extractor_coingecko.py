@@ -17,6 +17,18 @@ class ExtractorCoinGecko(extractor.Extractor):
         coint_to_search: str,
     ) -> None:
 
+        """
+        Inicializa una instancia del extractor de datos de CoinGecko.
+
+        Args:
+            sparksession (SparkSession): Sesión activa de Spark.
+            date_range (Dict[str, str]): Diccionario con las fechas 'from_date' y 'to_date' como objetos datetime.
+            api_demo_key (str): API key para acceder a CoinGecko.
+            coint_to_search (str): Nombre de la criptomoneda a buscar (ej. 'Bitcoin').
+
+        Raises:
+            exceptions.ExtractorErrorAuthentication: Si ocurre un error al autenticar contra los endpoints de CoinGecko.
+        """
         self._urls_coingecko = {
             "endpoint_coin_list": "https://api.coingecko.com/api/v3/coins/list",
             "endpoint_market_chat": "https://api.coingecko.com/api/v3/coins/coin_value_id/market_chart/range",
@@ -38,10 +50,11 @@ class ExtractorCoinGecko(extractor.Extractor):
 
     def _perform_to_authentication(self) -> None:
 
-        """_summary_
+        """
+        Realiza la autenticación básica y prepara las solicitudes a los endpoints de CoinGecko.
 
         Raises:
-            exceptions.ExtractorErrorAuthentication: _description_
+            exceptions.ExtractorErrorAuthentication: Si las respuestas de los endpoints no son exitosas (status_code != 200).
         """
 
         params = {
@@ -76,7 +89,9 @@ class ExtractorCoinGecko(extractor.Extractor):
 
     def _construction_coint_id(self) -> str:
 
-        """_summary_
+        """
+        Construye y asigna los atributos `_coint_id`, `_symbol` y `_name` con base en la búsqueda del nombre de la criptomoneda.
+        Filtra la lista de monedas para encontrar la que coincide con `self._coint_to_search`.
         """
 
         # ================================= Construccion =================================START
@@ -113,10 +128,12 @@ class ExtractorCoinGecko(extractor.Extractor):
 
     def extract_data_from_source(self) -> DataFrame:
         
-        """_summary_
+        """
+        Extrae los datos de precios históricos desde CoinGecko y los convierte en un DataFrame de Spark.
 
         Returns:
-            _type_: _description_
+            DataFrame: DataFrame de Spark con columnas ['date', 'price_usd', 'coint_id', 'name', 'symbol'] 
+                    y un valor de precio por día (último del día según timestamp).
         """
 
         data = self._request_market_chat.json()
